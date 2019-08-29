@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - data-mysql-5.7:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    networks:
+      vpcbr_01:
+        ipv4_address: 10.10.1.7
+
+
+volumes:
+  data-mysql-5.7:
+    driver: local
+
+
+networks:
+  vpcbr_01:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.10.1.0/23
+         gateway: 10.10.1.1
