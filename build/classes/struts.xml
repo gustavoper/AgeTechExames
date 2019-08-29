@@ -22,5 +22,13 @@
  <!--  <result name="error">Login.jsp</result>-->
  </action>
  
+  <action name="deleteExame" method="deleteExame" class="org.agetech.action.ExameAction">
+ <result name="DELETE">Exame.jsp</result>
+  <result name="ERROR">Exame.jsp</result>
+ <!--  <result name="error">Login.jsp</result>-->
+ </action>
+ 
+ 
+ 
  </package>
 </struts>

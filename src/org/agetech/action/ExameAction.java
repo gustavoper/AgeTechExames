@@ -53,10 +53,30 @@ public class ExameAction extends ActionSupport
 		}
 		return "ERROR";
 	}
+	
+	
+	public String deleteExame()
+	{
+		this.todosExames = exameDao.getAllExames();
+		if (exameDao.delete(id)) {
+			return "DELETE";
+		}
+		return "ERROR";
+		
+	}
 
 	
 	
 
+	public int getId()
+	{
+		return this.id;
+	}
+	
+	public void setId(int id)
+	{
+		this.id = id;
+	}
 
 	public List<Exame> getTodosExames() {
 		return todosExames;

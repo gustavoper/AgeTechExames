@@ -100,7 +100,7 @@
 									href="updatedetails.action?submitType=update&id=<s:property value="id"/>">
 										<button class="button" type="button" class="btn btn-primary">Alterar</button>
 								</a> <a
-									href="deleterecord.action?id=<s:property value="id"/>">
+									href="deleteExame.action?id=<s:property value="id"/>">
 										<button class="button" type="button" class="btn btn-danger">Excluir</button>
 								</a></td>
 							</tr>

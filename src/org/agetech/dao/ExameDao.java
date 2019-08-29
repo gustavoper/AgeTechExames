@@ -38,6 +38,24 @@ public class ExameDao {
 		
 	}
 	
+	
+	
+	public boolean delete(int id)
+	{
+		try
+		{
+			String sqlDelete = " delete from exame where id = ?";
+			PreparedStatement deleteStmt = ConnDb.getConnection().prepareStatement(sqlDelete);
+			deleteStmt.setInt(1, id);
+			deleteStmt.execute();
+			deleteStmt.close();
+			return true;	
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}		
+	}
+	
 
 	public List<Exame> getAllExames() {
 		List<Exame> listaExames = new ArrayList<Exame>();
